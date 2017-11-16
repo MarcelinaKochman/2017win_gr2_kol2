@@ -13,3 +13,49 @@
 # If you have enough courage and time, try storing (reading/writing) 
 # data in text files (YAML, JSON).
 # If you have even more courage, try implementing user interface.
+
+import sys
+import numpy as np
+
+
+class Student:
+
+	scores = []
+	attendance = []
+
+	def __init__(self, name, surname):
+		    self.name = name
+		    self.surname = surname
+	
+	def serializeToJsonFile():
+		pass	
+
+	def addNewScore(self, score):
+		self.scores.append(score)
+
+	def averageScore(self):
+		return np.mean(self.scores)
+
+
+class GradeBook:
+	listOfStudents = []
+
+	def addNewStudent(self, newStudent):
+		self.listOfStudents.append(newStudent)
+
+	def removeStudent(self, name, surname):
+		self.listOfStudents.remove(Student(name, surname))
+	
+
+if __name__ == "__main__":
+
+	gradeBook = GradeBook()
+
+	newStudent = Student("Alex", "Smith")
+	newStudent.addNewScore(5)
+	newStudent.addNewScore(3)
+
+	gradeBook.addNewStudent(newStudent)
+
+    
+
